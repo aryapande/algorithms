@@ -13,7 +13,7 @@ sort(v_w,test_w,test_v)
 print(v_w)
 W = 50
 max_val = 0
-for x in range(3):
+for x in range(1):
     if(W<=0):
         break
     if(W>=test_w[x]):
@@ -24,9 +24,9 @@ for x in range(3):
         print("weight left ",W)
     else:
         print('check for ',v_w[x])
-        a = W//v_w[x]
+        a = W*v_w[x]
         print(a)
-        W = W-a*v_w[x]
+        W = 0
         print("weight left ",W)
-        max_val += (v_w[x]*a)
+        max_val += a
 print(max_val)
