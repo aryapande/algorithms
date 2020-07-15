@@ -1,0 +1,24 @@
+def sort(a,b,c):
+    for x in range(len(a)):
+        for t in range(len(a)-1):
+            if(a[t]<a[t+1]):
+                a[t],a[t+1]=a[t+1],a[t]
+                b[t],b[t+1]=b[t+1],b[t]
+                c[t],c[t+1]=c[t+1],c[t]
+
+test_w = [20,50,30]
+test_v = [60,100,120]
+v_w = [3,2,4]
+sort(v_w,test_w,test_v)
+print(v_w)
+W = 50
+max_val = 0
+for x in range(3):
+    if(W<=0):
+        break
+    if(W-test_w[x]>0):
+        max_val += test_v[x]
+    else:
+        a = W//v_w[x]
+        W = W-a*test_v[x]
+print(max_val)
